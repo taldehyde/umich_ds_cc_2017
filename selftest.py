@@ -11,7 +11,10 @@ total = len(filenames)
 count = 0
 for name in filenames:
     result = aT.fileClassification(os.path.join(test_dir, name), "svmModel","svm")
-    if name.split('_')[0] == classes[int(result[0])]:
+    label = name.split('_')[0]
+    label_predicted = classes[int(result[0])]
+    print "{},{}".format(name, label_predicted)
+    if label == label_predicted:
         count += 1
 
-print "{}%".format(float(count)/total*100)
+print "Rate: {}%".format(float(count)/total*100)

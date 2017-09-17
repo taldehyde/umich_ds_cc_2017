@@ -1,0 +1,11 @@
+Install https://github.com/tyiannak/pyAudioAnalysis
+
+Uncomment line 74,75 in pyAudioAnalysis/audioBasicIO.py         
+if extension.lower() == '.wav':
+    [Fs, x] = wavfile.read(path)
+
+`python train_cheat.py` to train the model and it is saved to svmCheat
+
+`python selftest.py` to selftest the model
+
+`python test_cheat.py` will print the testing result to stdout
